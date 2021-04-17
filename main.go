@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/1dog/pcheck/cmd"
+import "github.com/01dog/pcheck/cmd"
 
 func main() {
 	cmd.Execute()
