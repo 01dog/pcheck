@@ -1,2 +1,4 @@
 # steamid.uk api key
-key: XXXXXXXXXXXXXXXXXX
+skey: XXXXXXXXXXXXXXXXXX
+# valve api key
+vkey: XXXXXXXXXXXXXXXXXX
