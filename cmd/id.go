@@ -50,7 +50,8 @@ var idCmd = &cobra.Command{
 		dir := path.Dir(u.Path)
 		if r, _ := path.Match("/profiles", dir); r {
 			// path.Base(u.Path) gets the steamID64 from the end of the url
-			convertSteamID(skey, path.Base(u.Path))
+			convertedIDs, _ := convertSteamID(skey, path.Base(u.Path))
+			printSteamIDs(convertedIDs)
 			return nil
 		}
 
