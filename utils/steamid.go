@@ -3,17 +3,16 @@ package steamid
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 )
 
 type response struct {
-	Data Data `json:"response"`
+	Data data `json:"response"`
 }
 
-type Data struct {
+type data struct {
 	SteamID64 string `json:"steamid"`
 	Success   int    `json:"success"`
 }
@@ -21,7 +20,6 @@ type Data struct {
 func ConvertVanityURL(vkey, vanityurl string) (string, error) {
 	u, err := url.Parse("https://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/")
 	if err != nil {
-		fmt.Println("error:", err)
 		return "", err
 	}
 
@@ -33,7 +31,6 @@ func ConvertVanityURL(vkey, vanityurl string) (string, error) {
 
 	r, err := http.Get(u.String())
 	if err != nil {
-		fmt.Println("error:", err)
 		return "", err
 	}
 	response := response{}
